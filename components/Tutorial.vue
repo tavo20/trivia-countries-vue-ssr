@@ -1,0 +1,53 @@
+<template >
+  <div>
+    <div id="start-again" class="main"></div>
+    <button class="start-game" @click="handleClick">START GAME</button>
+  </div>
+
+</template>
+
+
+
+<script setup>
+const handleClick = () => {
+  const element = document.getElementById("scroll-here");
+  console.log('element', element);
+  if(element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+</script>
+
+
+<style scoped>
+.main {
+  /* The image used */
+  background-image: url("../static/control.jpg");
+  /* Set a specific height */
+  min-height: 100vh;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+button {
+  position: absolute;
+  height: 40px;
+  width: 15%;
+  background: rgb(223 120 98 / 51%);
+  z-index: 3;
+  right: 43%;
+  bottom: 50%;
+  outline: none;
+  border: 1px solid #de7961;
+  font-size: 18px;
+  cursor: pointer;
+  letter-spacing: 4px;
+  color: #ffab9f;
+}
+
+@media (min-width: 1024px) {}
+</style>
