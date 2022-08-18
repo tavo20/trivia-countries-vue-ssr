@@ -1,4 +1,8 @@
 export default {
+  target: 'static',
+  router: {
+    base: '/trivia-countries-vue-ssr/'
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'trivia App',
@@ -51,5 +55,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+  
 }
