@@ -33,7 +33,6 @@ export default defineComponent({
             showQuestions.value = true;
             setTimeout(() => {
                 const element = document.getElementById("scroll-here");
-                console.log("element", element);
                 if (element) {
                     element.scrollIntoView({ behavior: "smooth", block: "center" });
                 }

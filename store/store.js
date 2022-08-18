@@ -175,6 +175,118 @@ const questions = [
         isCorrect: undefined,
         isWrong: undefined,
     },
+    {
+        id: getRandomIdOfNumberAndLetters(),
+        question: 'What is the capital of Colombia?',
+        response: 'Bogota',
+        options: [
+            'Bogotá',
+            'Cartagena',
+            'Medellin',
+            'Cali'
+        ],
+        done: false,
+        isCorrect: undefined,
+        isWrong: undefined,
+    },
+    {
+        id: getRandomIdOfNumberAndLetters(),
+        question: 'What is the capital of Ecuador?',
+        response: 'Quito',
+        options: [
+            'Quito',
+            'Guayaquil',
+            'Cuenca',
+            'Ambato'
+        ],
+        done: false,
+        isCorrect: undefined,
+        isWrong: undefined,
+    },
+    {
+        id: getRandomIdOfNumberAndLetters(),
+        question: 'What is the capital of Peru?',
+        response: 'Lima',
+        options: [
+            'Lima',
+            'Iquitos',
+            'Arequipa',
+            'Cusco'
+        ],
+        done: false,
+        isCorrect: undefined,
+        isWrong: undefined,
+    },
+    {
+        id: getRandomIdOfNumberAndLetters(),
+        question: 'What is the capital of the Paraguay?',
+        response: 'Asuncion',
+        options: [
+            'Asuncion',
+            'Ciudad del Este',
+            'Cordoba',
+            'La Paz'
+        ],
+        done: false,
+        isCorrect: undefined,
+        isWrong: undefined,
+    },
+    {
+        id: getRandomIdOfNumberAndLetters(),
+        question: 'What is the capital of China?',
+        response: 'Beijing',
+        options: [
+            'Beijing',
+            'Shanghai',
+            'Guangzhou',
+            'Shenzhen'
+        ],
+        done: false,
+        isCorrect: undefined,
+        isWrong: undefined,
+    },
+    {
+        id: getRandomIdOfNumberAndLetters(),
+        question: 'What is the capital of Japan?',
+        response: 'Tokyo',
+        options: [
+            'Tokyo',
+            'Osaka',
+            'Kyoto',
+            'Nagoya'
+        ],
+        done: false,
+        isCorrect: undefined,
+        isWrong: undefined,
+    },
+    {
+        id: getRandomIdOfNumberAndLetters(),
+        question: 'What is the capital of South Korea?',
+        response: 'Seoul',
+        options: [
+            'Seoul',
+            'Busan',
+            'Incheon',
+            'Daegu'
+        ],
+        done: false,
+        isCorrect: undefined,
+        isWrong: undefined,
+    },
+    {
+        id: getRandomIdOfNumberAndLetters(),
+        question: 'What is the capital of the Republic of Malta?',
+        response: 'Valletta',
+        options: [
+            'Valletta',
+            'Vadodara',
+            'Mumbai',
+            'Bangalore'
+        ],
+        done: false,
+        isCorrect: undefined,
+        isWrong: undefined,
+    },
 ];
 
 
@@ -197,7 +309,6 @@ export function getQuestionsRandom() {
 
 
 export const reset = () => {
-    console.log('ENTRA', store, store.get)
     store.questions = getQuestionsRandom();
     store.score = 0;
     store.currentQuestion= 0;
@@ -207,8 +318,6 @@ export const reset = () => {
     store.correct= 0;
 
 
-    console.log(store.questions);
-    console.log(store);
 };
 
 export let store = reactive({
