@@ -9,12 +9,14 @@
 
 
 <script setup>
+import { ref, defineEmits } from 'vue';
+
+const emits = defineEmits(['startNewGame']);
+
+
 const handleClick = () => {
-  const element = document.getElementById("scroll-here");
-  console.log('element', element);
-  if(element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
+  emits('startNewGame');
+
 }
 </script>
 
