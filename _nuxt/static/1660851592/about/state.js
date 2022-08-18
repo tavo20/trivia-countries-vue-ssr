@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a){return {staticAssetsBase:"\u002Ftrivia-countries-vue-ssr\u002F_nuxt\u002Fstatic\u002F1660851592",layout:"default",error:a,state:{store:{}},serverRendered:true,routePath:"\u002Fabout",config:{_app:{basePath:"\u002Ftrivia-countries-vue-ssr\u002F",assetsPath:"\u002Ftrivia-countries-vue-ssr\u002F_nuxt\u002F",cdnURL:a}},globalRefs:{}}}(null));
