@@ -38,7 +38,7 @@ const handleClick = () => {
 button {
   position: absolute;
   height: 40px;
-  width: 15%;
+  width: 200px;
   background: rgb(223 120 98 / 51%);
   z-index: 3;
   right: 43%;
@@ -49,6 +49,11 @@ button {
   cursor: pointer;
   letter-spacing: 4px;
   color: #ffab9f;
+
+  left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media (min-width: 1024px) {}

@@ -1,21 +1,12 @@
 <script setup>
-import { defineProps, ref, toRef, toRefs } from 'vue';
+import { defineProps, toRefs } from 'vue';
 import { store } from '../store/store.js';
-import arrowDown from '../static/arrow-down.png';
-
+import arrowDown from '../static/arrowD.png';
 
 const props = defineProps(['image', 'questionOne', 'questionTwo', 'final', 'page']);
 
-console.log('props.questionOne', props.questionOne)
-console.log('props.questionTwo', props.questionTwo)
 let questionOne$ = toRefs(props.questionOne);
 let questionTwo$ = toRefs(props.questionTwo);
-
-
-console.log('questionOne$', questionOne$.response, questionOne$.response.value);
-console.log('questionTwo$', questionTwo$.options.value)
-
-
 
 const handleOption = (option, question) => {
 
@@ -58,7 +49,6 @@ const handleOption = (option, question) => {
             </div>
 
             <div  v-if="questionTwo$.done.value">
-
                 <div v-if=" questionTwo$.isCorrect.value" class="correct">Correct answer</div>
                 <div v-else class="in-correct">Incorrect answer</div>
             </div>
@@ -66,40 +56,36 @@ const handleOption = (option, question) => {
 
 
         <div class="next-questions down" v-if="questionOne$.done.value && questionTwo$.done.value ">
-            Scroll down 
+           <img :src="arrowDown" alt=""> Scroll down  <img :src="arrowDown" alt="">
         </div>
         <div class="next-questions up" v-if="questionOne$.done.value && questionTwo$.done.value">
-            Scroll down
+        <img :src="arrowDown" alt="">   Scroll down <img :src="arrowDown" alt="">
         </div>
     </div>
 </template>
 
 
-<style scoped>
-    .parallax {
-        /* background-image: url("../assets/gaming/press.jpg"); */
-        min-height: 100vh;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-    }
-
+<style scoped lang="less">
+.parallax {
+    /* background-image: url("../assets/gaming/press.jpg"); */
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
     .question {
-        position: absolute;
-        width: auto;
-        /* background: rgb(255 255 255 / 20%); */
-        z-index: 3;
+    position: absolute;
+    width: auto;
+    /* background: rgb(255 255 255 / 20%); */
+    z-index: 3;
 
-        height: auto;
-        max-width: 250px;
-        border-radius: 4px;
-        padding: 10px;
-        border: 1px solid #f72053;
-        background: rgb(255 0 0 / 20%);
-
-    }
+    height: auto;
+    max-width: 250px;
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid #f72053;
+    background: rgb(255 0 0 / 20%);
 
     .correct {
         color: green;
@@ -107,23 +93,13 @@ const handleOption = (option, question) => {
         text-align: center;
         font-weight: bold;
     }
-
     .in-correct {
         color: tomato;
         font-size: 17px;
         text-align: center;
         font-weight: bold;
-    }
+        }
 
-    .one {
-        top: 10%;
-        left: 23%;
-    }
-
-    .two {
-        top: 40%;
-        right: 15%;
-    }
 
     .title {
         font-size: 15px;
@@ -133,7 +109,7 @@ const handleOption = (option, question) => {
     }
 
     .container-btns {
-            display: flex;
+        display: flex;
         flex-direction: column;
         gap: 15px;
     }
@@ -155,7 +131,18 @@ const handleOption = (option, question) => {
         background: #9454e2;
         color: #fff;
     }
+    }
 
+
+.one {
+    top: 10%;
+    left: 23%;
+}
+
+.two {
+    top: 40%;
+    right: 15%;
+}
 
     .next-questions {
         position: absolute;
@@ -167,6 +154,9 @@ const handleOption = (option, question) => {
         font-weight: bold;
         cursor: pointer;
         background: rgb(148 84 226 / 30%);
+        img {
+            width: 20px;
+        }
     }
     .up {
         top: 0;
@@ -175,26 +165,28 @@ const handleOption = (option, question) => {
     .down {
         bottom: 0;
     }
+}
 
-    @media (max-width: 490px) {
-        .one {
-            top: 3%;
-            left: 23%;
-        }
-        .two {
-            top: 54%;
-            right: 15%;
-        }
+
+@media (max-width: 490px) {
+    .one {
+        top: 3% !important;
+        left: 23% !important;
     }
-    @media (max-width: 769px) {
-        .one {
-            top: 3%;
-            left: 10%;
-        }
-        .two {
-            top: 52%;
-            right: 9%;
-        }
+    .two {
+        top: 54% !important;;
+        right: 15% !important;;
     }
+}
+@media (max-width: 769px) {
+    .one {
+        top: 3% !important;;
+        left: 10% !important;;
+    }
+    .two {
+        top: 52% !important;;
+        right: 9% !important;;
+    }
+}
 
 </style>

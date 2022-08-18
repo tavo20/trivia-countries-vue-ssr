@@ -13,7 +13,17 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
+      {
+        hid: 'Trivia Game countries',
+        name: 'description',
+        content: 'Trivia Game countries - Trivia App'
+      },
+      {
+        hid: 'Game Question countries',
+        name: 'description',
+        content: 'Description Game Question countries - Trivia App'
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

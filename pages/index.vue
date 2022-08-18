@@ -1,4 +1,4 @@
-<script setup>
+<script >
 import PressImage from '../static/press.jpg';
 import OldConsoleImage from '../static/old-console.jpg';
 import GamerImage from '../static/gamer.jpg';
@@ -8,33 +8,55 @@ import { store, } from '../store/store.js';
 import Separator from '../components/Separator.vue';
 import Results from '../components/Results.vue';
 import { ref } from 'vue';
-
-let showQuestions = ref(false);
-
-
-const handleStartGame = () => {
-  showQuestions.value = false;
-  showQuestions.value = true;
-
-  setTimeout(() => {
-    const element = document.getElementById("scroll-here");
-    console.log('element', element);
-    if(element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-  },100)
+import { defineComponent, useMeta } from '@nuxtjs/composition-api';
+import StartPage from '../components/StartPage.vue';
 
 
-}
-
+export default defineComponent({
+    head: {
+        title: "Home game",
+        htmlAttrs: {
+            lang: "en"
+        },
+    },
+    meta: [{
+            hid: "Home Game countries",
+            title: "Game",
+            description: "About App game countries"
+        }],
+    setup() {
+        const { title } = useMeta();
+        title.value = "Game countries";
+        let showQuestions = ref(false);
+        const handleStartGame = () => {
+            showQuestions.value = false;
+            showQuestions.value = true;
+            setTimeout(() => {
+                const element = document.getElementById("scroll-here");
+                console.log("element", element);
+                if (element) {
+                    element.scrollIntoView({ behavior: "smooth", block: "center" });
+                }
+            }, 100);
+        };
+        return {
+            handleStartGame,
+            showQuestions,
+            store,
+            PressImage,
+            OldConsoleImage,
+            GamerImage,
+            BlueImage
+        };
+    },
+    components: { StartPage }
+})
 </script>
 
 
 <template>
-
 <div> 
-  <Tutorial @startNewGame="handleStartGame"/>
-
+  <StartPage @startNewGame="handleStartGame"/>
   <div v-show="showQuestions">
     <SectionParallax id="scroll-here" :image="PressImage" :questionOne="store.questions[0]" :questionTwo="store.questions[1]" page="1"  />
     <Separator/>
@@ -47,7 +69,6 @@ const handleStartGame = () => {
 
   </div>
 </div>
-
 </template>
 
 

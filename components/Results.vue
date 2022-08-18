@@ -41,71 +41,34 @@ if(store.correct >= 8) {
     </main>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 
 .container {
     background: black;
     height: 400px;
     width: 100%;
-}
+    .container-answers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        font-size: 20px;
+    }
+    .correct {
+        color: #00ff6b;
+        letter-spacing: 3px;
+    }
+    .in {
+        color: tomato;
+        letter-spacing: 3px;
+    }
 
-.container-answers {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-    font-size: 20px;
+    .message {
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+        padding-top: 100px;
+    }
 }
-.correct {
-    color: #00ff6b;
-    letter-spacing: 3px;
-}
-
-.in {
-    color: tomato;
-    letter-spacing: 3px;
-}
-
-.message {
-    color: white;
-    font-size: 2rem;
-    text-align: center;
-    padding-top: 100px;
-}
-
-.container-again {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-button {
-    background: rgb(19 203 58 / 70%);
-    color: white;
-    outline: none;
-    border: none;
-    width: 200px;
-    height: 50px;
-    font-size: 18px;
-    letter-spacing: 4px;
-    cursor: pointer;
-}
-button:hover {
-    background: rgb(19 203 58 / 90%);
-    letter-spacing: 6px;
-}
-
-
-/* #header {
-  color: black;
-  .navigation {
-    font-size: 12px;
-  }
-  
-  .logo {
-    width: 300px;
-  }
-} */
-
 
 </style>
